@@ -54,6 +54,25 @@ namespace QuickSort
             QuickSort.Sort(chrs, QuickSort.SortType.Descending);
             DisplayArray(chrs);
 
+            double[] doubleNums = new double[Count];
+            for (int k = 0; k < doubleNums.Length; k++)
+            {
+                double div = random.Next(-300, 300);
+                double mod = Math.Round(random.NextDouble(), 2);
+                doubleNums[k] = div + mod;
+            }
+
+            Console.WriteLine("Array before sorting:");
+            DisplayArray(doubleNums);
+
+            Console.WriteLine("Sorting by ascending:");
+            QuickSort.Sort(doubleNums);
+            DisplayArray(doubleNums);
+
+            Console.WriteLine("Sorting by Descending:");
+            QuickSort.Sort(doubleNums, QuickSort.SortType.Descending);
+            DisplayArray(doubleNums);
+
             Console.ReadKey();
         }
     }
